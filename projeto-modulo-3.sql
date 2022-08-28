@@ -378,3 +378,20 @@ values
 	(402022, 3, True, False,'colocou tudo em prática', 90),
     (402022, 4, True, True, 'mostrou seu diferencial', 110),
     (402022, 5, True, True, 'Está quase lá', 140);
+
+
+-- PERGUNTA 1: SELECIONAR A QUANTIDADE TOTAL DE ESTUDANTES CADASTRADOS NO BANCO
+select count (id_matricula) as "alunos cadastrados" 
+from tb_matricula;
+
+-- PERGUNTA 2: SELECIONAR TODOS OS ESTUDANTES COM OS RESPECTIVOS CURSOS QUE ELES ESTÃO CADASTRADOS
+create view estudante_matricula as
+select tb_matricula.id_aluno, tb_aluno.nome, tb_curso.nome as "curso"
+from tb_matricula
+inner join tb_aluno on tb_matricula.id_aluno = tb_aluno.id_aluno 
+inner join tb_turma on tb_turma.id_turma = tb_matricula.id_turma 
+inner join tb_curso on tb_turma.curso = tb_curso.id_curso 
+order by tb_matricula.id_aluno;
+
+select *
+from estudante_matricula;
