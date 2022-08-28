@@ -68,6 +68,14 @@ create table "tb_matricula" (
   "data_saida" date
 );
 
+create table "tb_alunos_empregados" (
+    id_aluno_empregado int primary key,
+    id_aluno int,
+    foreign  key (id_aluno)
+    references tb_aluno (id_aluno),
+    vaga varchar (50),
+    salario int
+);
 
 create table "tb_atividades" (
   "id_matricula" int,
