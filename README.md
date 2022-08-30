@@ -249,7 +249,7 @@ grant all on database projeto3 to nomedouser;
 
 ###### Diego Ferreira - Colaborador II
 
-[![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link=www.linkedin.com/in/diego-sousa-ferreira)](www.linkedin.com/in/diego-sousa-ferreira/)
+[![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/joao-victor-juliao/)](https://www.linkedin.com/in/diego-sousa-ferreira/)
 
 ###### João Santos - Gestor de Gente e engajamento
 
