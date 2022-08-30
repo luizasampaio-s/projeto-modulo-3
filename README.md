@@ -91,15 +91,44 @@ where turmas > 1;
 
 4. Qual a quantidade de alunos que optaram pelo método de pagamento da PROVI?
 
-![image](https://cdn.discordapp.com/attachments/998027176605646848/1001698133417406524/Screenshot_2.png)
+```python
+Criação de uma view com nome alunos_ISA
+
+create view alunos_ISA as 
+select tb_matricula.id_aluno,tb_aluno.nome, tb_pagamento.forma_de_pagamento
+from tb_matricula
+inner join tb_aluno on tb_aluno.id_aluno = tb_matricula.id_aluno
+inner join tb_pagamento on tb_matricula.id_pagamento = tb_pagamento.id_pagamento
+where tb_pagamento.forma_de_pagamento = 'ISA/Provi';
+
+Abaixo, realização da consulta que retorna a quantidade de alunos que optaram pelo método de pagamento PROVI
+
+select count(id_aluno) as "quantidade de alunos que utilizam o método ISA/Provi" 
+from alunos_ISA;
+```
 
 5. Quais alunos estão trabalhando e estão passíveis para o pagamento do financiamento PROVI?
 
-![image](https://cdn.discordapp.com/attachments/998027176605646848/1001698133417406524/Screenshot_2.png)
+
 
 6. Quais alunos concluíram o curso da Resilia mas ainda não estão empregados?
 
-![image](https://cdn.discordapp.com/attachments/998027176605646848/1001698133417406524/Screenshot_2.png)
+```python
+Criação de view com nome aluno_desempregado
+
+create view aluno_desempregado as
+select tb_aluno.id_aluno, nome, vaga
+from tb_aluno
+left join tb_alunos_empregados on tb_aluno.id_aluno = tb_alunos_empregados.id_aluno
+where salario is Null
+order by tb_aluno.id_aluno;
+
+Abaixo, realização da consulta que retorna o nome dos
+alunos que ainda estão sem emprego após a realização do curso. 
+
+select id_aluno, nome as "alunos desempregados"
+from aluno_desempregado;
+```
 
 Para visualizar os dados das consultas foi criado um dashboard com Power BI em que é possível analisar graficamente das consultas e os insights que foram gerados pelo banco de dados:
 
