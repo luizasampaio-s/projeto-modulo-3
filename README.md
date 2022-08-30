@@ -109,7 +109,25 @@ from alunos_ISA;
 
 5. Quais alunos estão trabalhando e estão passíveis para o pagamento do financiamento PROVI?
 
+```python
+Criação de view com nome alunos_empregados
 
+create view alunos_empregados as
+select tb_aluno.id_aluno,tb_aluno.nome, tb_alunos_empregados.salario, tb_pagamento.forma_de_pagamento
+from tb_alunos_empregados
+inner join tb_aluno
+on tb_alunos_empregados.id_aluno = tb_aluno.id_aluno
+inner join tb_matricula
+on tb_aluno.id_aluno = tb_matricula.id_aluno
+inner join tb_pagamento
+on tb_pagamento.id_pagamento = tb_matricula.id_pagamento
+where forma_de_pagamento like '%ISA/Provi%' and salario > 1500;
+
+Abaixo, realização da consulta que retorna o nome dos
+alunos que estão empregados e aptos a pagarem o financiamento via PROVI por ter uma renda superior a R$ 1.500,00. 
+
+select * from alunos_empregados;
+```
 
 6. Quais alunos concluíram o curso da Resilia mas ainda não estão empregados?
 
