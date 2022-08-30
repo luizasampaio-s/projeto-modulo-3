@@ -124,7 +124,8 @@ on tb_pagamento.id_pagamento = tb_matricula.id_pagamento
 where forma_de_pagamento like '%ISA/Provi%' and salario > 1500;
 
 Abaixo, realização da consulta que retorna o nome dos
-alunos que estão empregados e aptos a pagarem o financiamento via PROVI por ter uma renda superior a R$ 1.500,00. 
+alunos que estão empregados e aptos a pagarem o financiamento via PROVI. 
+Nota: os alunos empregados nessa condição auferem uma renda salarial superior a R$ 1.500,00
 
 select * from alunos_empregados;
 ```
