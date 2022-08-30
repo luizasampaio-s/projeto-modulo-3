@@ -209,8 +209,8 @@ trabalhando em equipe conseguimos desenvolver as soft skills e organizar de form
 
 | Resultados | GIF |      
 | ------ | ------ |
-| Construção de trabalho juntos: a união faz a força.| <img src="https://media.giphy.com/media/5pPwx2VY4Uf6eqPF8N/giphy.gif" width="600" height="150" /> |
-| A humildade é sinal de sabedoria. Não se desesperar diante da dificuldade também é uma grande virtude. | <img src="https://media.giphy.com/media/26u4ohUWw4Lwozxm0/giphy.gif" width="1000" height="150" /> |
-| As discussões e conflitos fazem parte do processo de aprendizagem. Refletir sobre nossos erros e buscar evoluir como ser humano demonstra empatia e maturidade.| <img src="https://media.giphy.com/media/YSBt5A3MB45EfyH00t/giphy.gif" width="1000" height="150" /> |
-|A dedicação resulta em satisfação pessoal e coletiva. Não desistir é importante para o processo de aprendizagem.| <img src="https://media.giphy.com/media/11JTxkrmq4bGE0/giphy.gif" width="600" height="150" /> |
-|Desfrutar após um objetivo alcançado, fruto de dedicação e empenho, também é importante. Aprecie e valorize as pequenas vitórias, pois elas não dão gás para continuar na trilha de nossos sonhos e objetivos |<img src="https://media.giphy.com/media/lMameLIF8voLu8HxWV/giphy.gif" width="1200" height="190" />|
+| Construção de trabalho juntos: a união faz a força.| <img src="https://media.giphy.com/media/5pPwx2VY4Uf6eqPF8N/giphy.gif" width="500" height="250" /> |
+| A humildade é sinal de sabedoria. Não se desesperar diante da dificuldade também é uma grande virtude. | <img src="https://media.giphy.com/media/26u4ohUWw4Lwozxm0/giphy.gif" width="500" height="250" /> |
+| As discussões e conflitos fazem parte do processo de aprendizagem. Refletir sobre nossos erros e buscar evoluir como ser humano demonstra empatia e maturidade.| <img src="https://media.giphy.com/media/YSBt5A3MB45EfyH00t/giphy.gif" width="500" height="250" /> |
+|A dedicação resulta em satisfação pessoal e coletiva. Não desistir é importante para o processo de aprendizagem.| <img src="https://media.giphy.com/media/11JTxkrmq4bGE0/giphy.gif" width="500" height="250" /> |
+|Aprecie e valorize as pequenas vitórias, pois elas não dão gás para continuar na trilha de nossos sonhos e objetivos |<img src="https://media.giphy.com/media/lMameLIF8voLu8HxWV/giphy.gif" width="500" height="250" />|
