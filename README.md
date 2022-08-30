@@ -53,7 +53,21 @@ from tb_matricula;
 
 2. Selecionar todos os estudantes com os respectivos cursos que eles estão cadastrados;
 
-![image](https://cdn.discordapp.com/attachments/998027176605646848/1001698133417406524/Screenshot_2.png)
+```python
+Foram criadas views para armazenar algumas consultas que são utilizadas com frequência no banco de dados
+
+create view estudante_matricula as
+select tb_matricula.id_aluno, tb_aluno.nome, tb_curso.nome as "curso"
+from tb_matricula
+inner join tb_aluno on tb_matricula.id_aluno = tb_aluno.id_aluno 
+inner join tb_turma on tb_turma.id_turma = tb_matricula.id_turma 
+inner join tb_curso on tb_turma.curso = tb_curso.id_curso 
+order by tb_matricula.id_aluno;
+
+Abaixo, a realização da consulta que retorna o nome e o curso dos estudantes da Resilia
+
+select * from estudante_matricula;
+```
 
 3. Selecionar quais pessoas facilitadoras atuam em mais de uma turma.
 
