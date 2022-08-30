@@ -44,7 +44,12 @@ Ao iniciar as consultas no banco de dados, é apresentado os resultados das cons
 
 1. Selecionar a quantidade total de estudantes cadastrados no banco;
 
-![image](https://cdn.discordapp.com/attachments/998027176605646848/1001698133417406524/Screenshot_2.png)
+```python
+selecionando a quantidade de estudantes cadastrados no banco.
+
+select count(id_matricula) as "alunos cadastrados" 
+from tb_matricula;
+```
 
 2. Selecionar todos os estudantes com os respectivos cursos que eles estão cadastrados;
 
