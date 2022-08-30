@@ -380,11 +380,13 @@ values
     (402022, 5, True, True, 'Está quase lá', 140);
 
 
--- PERGUNTA 1: SELECIONAR A QUANTIDADE TOTAL DE ESTUDANTES CADASTRADOS NO BANCO
+-- PERGUNTA 1: Selecionar a quantidade total de estudantes cadastrados no banco;
+
 select count (id_matricula) as "alunos cadastrados" 
 from tb_matricula;
 
--- PERGUNTA 2: SELECIONAR TODOS OS ESTUDANTES COM OS RESPECTIVOS CURSOS QUE ELES ESTÃO CADASTRADOS
+-- PERGUNTA 2: Selecionar todos os estudantes com os respectivos cursos que eles estão cadastrados;
+
 create view estudante_matricula as
 select tb_matricula.id_aluno, tb_aluno.nome, tb_curso.nome as "curso"
 from tb_matricula
@@ -395,3 +397,16 @@ order by tb_matricula.id_aluno;
 
 select *
 from estudante_matricula;
+
+-- PERGUNTA 3: Selecionar quais pessoas facilitadoras atuam em mais de uma turma;
+
+
+
+-- PERGUNTA 4: Selecionar quais estudantes ainda não estão empregados;
+
+create view estudantes_desempregados as
+select tba.id_aluno, tba.nome, tbae.vaga from tb_aluno tba
+left join tb_alunos_empregados tbae on tba.id_aluno = tbae.id_aluno
+where salario is Null order by id_aluno
+
+select * from estudantes_desempregados
