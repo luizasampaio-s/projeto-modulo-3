@@ -71,7 +71,23 @@ select * from estudante_matricula;
 
 3. Selecionar quais pessoas facilitadoras atuam em mais de uma turma.
 
-![image](https://cdn.discordapp.com/attachments/998027176605646848/1001698133417406524/Screenshot_2.png)
+```python
+Criação da view com nome facilitadores_turma
+
+create view facilitadores_turma as 
+select tb_facilitacao.nome, count(id_turma) as "turmas" from tb_facilitacao
+inner join tb_turma on tb_facilitacao.id_facilitador = tb_turma.facilitacao_tech
+or tb_facilitacao.id_facilitador = tb_turma.facilitacao_soft
+group by tb_facilitacao.nome;
+
+Abaixo, realização da consulta que retorna o nome dos facilitadores que lecionam em mais de uma turma.
+
+select * 
+from facilitadores_turma
+where turmas > 1;
+
+```
+
 
 4. Qual a quantidade de alunos que optaram pelo método de pagamento da PROVI?
 
