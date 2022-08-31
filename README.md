@@ -34,8 +34,7 @@ Para escrever o código utilizamos a [documentação do PostgreSQL](https://pgdo
 <img src="https://git-scm.com/images/logos/1color-orange-lightbg@2x.png" width="90" height="50" /> <img src="https://cdn.icon-icons.com/icons2/2368/PNG/512/github_logo_icon_143772.png" width="70" height="50" /> <img src="https://global-uploads.webflow.com/5e157548d6f7910beea4e2d6/62a07b53139aec4c1fd07771_discord-logo.png" width="100" height="50" />
 
 
-<img src="https://asset.brandfetch.io/idAnDTFapY/idTN_OiBI_.png" width="90" height="50" /><img src="https://assets.stickpng.com/images/584815fdcef1014c0b5e497a.png" width="90" height="50" />
-<img src="https://sousecretaria.com.br/wp-content/uploads/2021/02/logo-trello-a-645x645.jpg" width="90" height="50" />
+<img src="https://asset.brandfetch.io/idAnDTFapY/idTN_OiBI_.png" width="90" height="50" /><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Postgresql_elephant.svg/150px-Postgresql_elephant.svg.png" width="90" height="50" /><img src="https://sousecretaria.com.br/wp-content/uploads/2021/02/logo-trello-a-645x645.jpg" width="90" height="50" />
 
 
 ## 💻FUNCIONAMENTO
@@ -264,27 +263,27 @@ grant all on database projeto3 to nomedouser;
 
 ## 🤝 DESENVOLVEDORES
 
-![image](https://media.discordapp.net/attachments/998027176605646848/1001698496065314836/Screenshot_4.png?width=1194&height=671)
+![Apresentação de Negócios Plano de Projeto Corporativo Geométrico Amarelo e Branco](https://user-images.githubusercontent.com/75100979/187587320-f03200c7-1d46-4fa1-9e6a-f08d35a964a7.png)
 
 ###### Diego Ferreira - Colaborador II
 
-[![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/joao-victor-juliao/)](https://www.linkedin.com/in/diego-sousa-ferreira/)
+[![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https:https://www.linkedin.com/in/joao-victor-juliao/)](https://www.linkedin.com/in/diego-sousa-ferreira/)
 
 ###### João Santos - Gestor de Gente e engajamento
 
-[![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/joao-victor-juliao/)](https://www.linkedin.com/in/joao-victor-juliao/)
+[![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https:https://www.linkedin.com/in/joao-victor-juliao/)](https://www.linkedin.com/in/joao-victor-juliao/)
 
 ###### Karoline Silva - Colaboradora
 
-[![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/kjcsilva/)](https://www.linkedin.com/in/kjcsilva/)
+[![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https:https://www.linkedin.com/in/kjcsilva/)](https://www.linkedin.com/in/kjcsilva/)
 
 ###### Lucas Canella - Co-facilitador
 
-[![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/lucascanella-dados/)](https://www.linkedin.com/in/lucascanella-dados/)
+[![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https:https://www.linkedin.com/in/lucascanella-dados/)](https://www.linkedin.com/in/lucascanella-dados/)
 
-###### Luiza Santos - Gestora do Conhecimento
+###### Luiza Sampaio - Gestora do Conhecimento
 
-[![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/luizasampaiods/)](https://www.linkedin.com/in/luizasampaiods/)
+[![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https:https://www.linkedin.com/in/luizasampaiods/)](https://www.linkedin.com/in/luizasampaiods/)
 
 ## Resultados do projeto:
 
