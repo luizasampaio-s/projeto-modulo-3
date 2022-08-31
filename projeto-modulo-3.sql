@@ -400,9 +400,35 @@ from estudante_matricula;
 
 -- PERGUNTA 3: Selecionar quais pessoas facilitadoras atuam em mais de uma turma;
 
+-- PERGUNTA 4: Qual a quantidade de alunos que optaram pelo método de pagamento da PROVI;
+
+create view alunos_ISA as 
+select tb_matricula.id_aluno,tb_aluno.nome, tb_pagamento.forma_de_pagamento
+from tb_matricula
+inner join tb_aluno on tb_aluno.id_aluno = tb_matricula.id_aluno
+inner join tb_pagamento on tb_matricula.id_pagamento = tb_pagamento.id_pagamento
+where tb_pagamento.forma_de_pagamento = 'ISA/Provi';
+
+select count(id_aluno) as "quantidade de alunos que utilizam o método ISA/Provi" 
+from alunos_ISA;
 
 
--- PERGUNTA 4: Selecionar quais estudantes ainda não estão empregados;
+-- Pergunta 5: Quais alunos estão trabalhando e estão passíveis para o pagamento do financiamento PROVI;
+
+create view alunos_empregados as
+select tb_aluno.id_aluno,tb_aluno.nome, tb_alunos_empregados.salario, tb_pagamento.forma_de_pagamento
+from tb_alunos_empregados
+inner join tb_aluno
+on tb_alunos_empregados.id_aluno = tb_aluno.id_aluno
+inner join tb_matricula
+on tb_aluno.id_aluno = tb_matricula.id_aluno
+inner join tb_pagamento
+on tb_pagamento.id_pagamento = tb_matricula.id_pagamento
+where forma_de_pagamento like '%ISA/Provi%' and salario > 1500;
+select * from alunos_empregados;
+
+
+-- PERGUNTA 6: Selecionar quais estudantes ainda não estão empregados;
 
 create view estudantes_desempregados as
 select tba.id_aluno, tba.nome, tbae.vaga from tb_aluno tba
