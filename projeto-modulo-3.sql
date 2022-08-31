@@ -352,7 +352,7 @@ values
 	(342022, 5, True, True, 'colocou tudo em prática', 61),
 	(352022, 1, True, True, 'colocou tudo em prática', 32),
 	(352022, 2, True, True, 'está quase lá', 80),
-	(352022, 3, True, False,'Está quase lá',25), 
+	(352022, 3, True, False,'está quase lá',25), 
     (352022, 4, True, True, 'colocou tudo em prática', 32),
     (352022, 5, True, True, 'colocou tudo em prática', 53),
 	(362022, 1, True, True, 'mostrou seu diferencial', 26),
@@ -362,22 +362,22 @@ values
 	(372022, 2, True, True, 'colocou tudo em prática', 50),
 	(372022, 3, True, True,'mostrou seu diferencial', 45),
     (372022, 4, True, True,'mostrou seu diferencial', 45),
-    (372022, 5, True, True,'Está quase lá', 45),
+    (372022, 5, True, True,'está quase lá', 45),
 	(382022, 1, True, True, 'colocou tudo em prática', 32),
 	(382022, 2, True, True, 'colocou tudo em prática', 90),
 	(382022, 3, True, True,'mostrou seu diferencial', 90),
-    (382022, 4, True, True,'colocou tudo em pratica', 90),
+    (382022, 4, True, True,'colocou tudo em prática', 90),
     (382022, 5, True, True,'mostrou seu diferencial', 90),
 	(392022, 1, True, True, 'mostrou seu diferencial', 20),
 	(392022, 2, True, True, 'mostrou seu diferencial', 105),
-	(392022, 3, True, True,'Está quase lá',36),
+	(392022, 3, True, True,'está quase lá',36),
     (392022, 4, True, True, 'mostrou seu diferencial', 105),
-    (392022, 5, True, True, 'Colocou tudo em prática', 105),
+    (392022, 5, True, True, 'colocou tudo em prática', 105),
 	(402022, 1, True, True, 'mostrou seu diferencial', 40),
 	(402022, 2, True, True, 'está quase lá', 30),
 	(402022, 3, True, False,'colocou tudo em prática', 90),
     (402022, 4, True, True, 'mostrou seu diferencial', 110),
-    (402022, 5, True, True, 'Está quase lá', 140);
+    (402022, 5, True, True, 'está quase lá', 140);
 
 
 -- PERGUNTA 1: Selecionar a quantidade total de estudantes cadastrados no banco;
@@ -444,6 +444,24 @@ select * from alunos_empregados;
 create view estudantes_desempregados as
 select tba.id_aluno, tba.nome, tbae.vaga from tb_aluno tba
 left join tb_alunos_empregados tbae on tba.id_aluno = tbae.id_aluno
-where salario is Null order by id_aluno
+where salario is Null order by id_aluno;
 
-select * from estudantes_desempregados
+select * from estudantes_desempregados;
+
+-- PERGUNTA 7: Quantos ToDo's 1 e 2 já foram enviados?
+create view todos_enviados as
+select count(tba.todo1) as ToDos from tb_atividades tba
+where tba.todo1 = 'true'
+union all
+select count(tba.todo2) from tb_atividades tba
+where tba.todo2 = 'true';
+
+select * from todos_enviados;
+
+-- Selecionar a quantidade de alunos em cada modalidade do projeto
+create view modalidade as
+select tb_atividades.projeto, count(tb_atividades.projeto) from tb_atividades
+group by tb_atividades.projeto;
+
+select * from modalidade;
+
