@@ -400,6 +400,17 @@ from estudante_matricula;
 
 -- PERGUNTA 3: Selecionar quais pessoas facilitadoras atuam em mais de uma turma;
 
+create view facilitadores_turma as 
+select tb_facilitacao.nome, count(id_turma) as "turmas" from tb_facilitacao
+inner join tb_turma on tb_facilitacao.id_facilitador = tb_turma.facilitacao_tech
+or tb_facilitacao.id_facilitador = tb_turma.facilitacao_soft
+group by tb_facilitacao.nome;
+
+
+select * 
+from facilitadores_turma
+where turmas > 1;
+
 -- PERGUNTA 4: Qual a quantidade de alunos que optaram pelo método de pagamento da PROVI;
 
 create view alunos_ISA as 
@@ -409,7 +420,7 @@ inner join tb_aluno on tb_aluno.id_aluno = tb_matricula.id_aluno
 inner join tb_pagamento on tb_matricula.id_pagamento = tb_pagamento.id_pagamento
 where tb_pagamento.forma_de_pagamento = 'ISA/Provi';
 
-select count(id_aluno) as "quantidade de alunos que utilizam o método ISA/Provi" 
+select count(id_aluno) as "Quantidade de alunos que utilizam o método ISA/Provi" 
 from alunos_ISA;
 
 
