@@ -211,7 +211,8 @@ select * from pontos_codewars;
 
 Para visualizar os dados das consultas foi criado um dashboard com Power BI em que é possível analisar graficamente das consultas e os insights que foram gerados pelo banco de dados:
 
-![image](https://cdn.discordapp.com/attachments/998027176605646848/1001698133849415782/Screenshot_3.png)
+![Screenshot_3](https://user-images.githubusercontent.com/75100979/187985465-c06fd341-187e-4677-ac32-e8be8eb396a0.png)
+
 
 ## 💡 COMO EXECUTAR O PROJETO?
 
