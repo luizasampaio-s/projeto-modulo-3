@@ -180,7 +180,7 @@ Abaixo, realização da consulta que retorna a quantidade de alunos em cada moda
 select * from modalidade;
 ```
 
-9.Selecionar os alunos, seus pontos totais no codewars e se ele está com a nota em dia ou não;
+9. Selecionar os alunos, seus pontos totais no codewars e se ele está com a nota em dia ou não;
 
 ```python
 Selecionarei os atributos matricula da tabela atividades e a soma de todos os codewars da tabela aluno. Usando a cláusula CASE, caso a somatória
