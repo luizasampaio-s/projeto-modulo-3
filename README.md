@@ -141,8 +141,7 @@ left join tb_alunos_empregados on tb_aluno.id_aluno = tb_alunos_empregados.id_al
 where salario is Null
 order by tb_aluno.id_aluno;
 
-Abaixo, realização da consulta que retorna o nome dos
-alunos que ainda estão sem emprego após a realização do curso. 
+Abaixo, realização da consulta que retorna o nome dos alunos que ainda estão sem emprego após a realização do curso. 
 
 select id_aluno, nome as "alunos desempregados"
 from aluno_desempregado;
