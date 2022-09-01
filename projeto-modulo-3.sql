@@ -6,7 +6,6 @@ create table "tb_aluno" (
   "data_nascimento" date
 );
 
-
 create table "tb_facilitacao" (
   "id_facilitador" int
     primary key,
@@ -16,15 +15,11 @@ create table "tb_facilitacao" (
   "frente" varchar(255)
 );
 
-
-
 create table "tb_curso" (
   "id_curso" int
     primary key,
   "nome" varchar(50)
 );
-
-
 
 create table "tb_pagamento" (
   "id_pagamento" integer
@@ -32,7 +27,6 @@ create table "tb_pagamento" (
   "forma_de_pagamento" varchar(50),
   "valor" int
 );
-
 
 create table "tb_turma" (
   "id_turma" varchar(10)
@@ -50,7 +44,6 @@ create table "tb_turma" (
   "data_inicio" date,
   "data_final" date
 );
-
 
 create table "tb_matricula" (
   "id_matricula" int
@@ -82,10 +75,10 @@ create table "tb_atividades" (
     foreign  key (id_matricula)
     references tb_matricula (id_matricula),
   "modulo" int, 
-  "todo1" varchar (50),
-   todo2 varchar (50),
+  "todo1" boolean,
+   todo2 boolean,
   "projeto" varchar (50),
-   codewars varchar (50)
+   codewars int
 );
 
 insert into tb_pagamento (id_pagamento, forma_de_pagamento, valor)
@@ -146,8 +139,7 @@ values (1,'João Almeida de Carvalho','544.472.070-10','2000-07-07'),
        (37,'Antonia Dias Andrade','012.121.163-05','1990-05-09'),
        (38,'Carlos Nogueira Camacho','278.636.404-31','1996-02-28'),
        (39,'Rayanne Fernandes Barellos','551.667.261-97','2000-03-18'),
-       (40,'Jhonata Brito Rubi','869.644.831-60','1997-08-23');
-      
+       (40,'Jhonata Brito Rubi','869.644.831-60','1997-08-23');  
       
 insert into tb_matricula (id_matricula, id_aluno, id_turma,id_pagamento,data_matricula, data_saida)
 values (012021,1,19,1,'2021-12-27','2022-05-12'),
@@ -190,7 +182,6 @@ values (012021,1,19,1,'2021-12-27','2022-05-12'),
        (382022,38,20,1,'2022-05-16',Null),
        (392022,39,20,1,'2022-05-16',Null),
        (402022,40,20,1,'2022-05-16',Null);
-
 
 insert into tb_alunos_empregados (id_aluno_empregado, id_aluno, vaga, salario)
 values (1,2,'Dev Java',1900),
@@ -379,7 +370,6 @@ values
     (402022, 4, True, True, 'mostrou seu diferencial', 110),
     (402022, 5, True, True, 'está quase lá', 140);
 
-
 -- PERGUNTA 1: Selecionar a quantidade total de estudantes cadastrados no banco;
 
 select count (id_matricula) as "alunos cadastrados" 
@@ -405,7 +395,6 @@ select tb_facilitacao.nome, count(id_turma) as "turmas" from tb_facilitacao
 inner join tb_turma on tb_facilitacao.id_facilitador = tb_turma.facilitacao_tech
 or tb_facilitacao.id_facilitador = tb_turma.facilitacao_soft
 group by tb_facilitacao.nome;
-
 
 select * 
 from facilitadores_turma
@@ -436,8 +425,8 @@ on tb_aluno.id_aluno = tb_matricula.id_aluno
 inner join tb_pagamento
 on tb_pagamento.id_pagamento = tb_matricula.id_pagamento
 where forma_de_pagamento like '%ISA/Provi%' and salario > 1500;
-select * from alunos_empregados;
 
+select * from alunos_empregados;
 
 -- PERGUNTA 6: Selecionar quais estudantes ainda não estão empregados;
 
@@ -449,19 +438,40 @@ where salario is Null order by id_aluno;
 select * from estudantes_desempregados;
 
 -- PERGUNTA 7: Quantos ToDo's 1 e 2 já foram enviados?
+
 create view todos_enviados as
 select count(tba.todo1) as ToDos from tb_atividades tba
-where tba.todo1 = 'true'
+where tba.todo1 = true
 union all
 select count(tba.todo2) from tb_atividades tba
-where tba.todo2 = 'true';
+where tba.todo2 = true;
 
 select * from todos_enviados;
 
--- Selecionar a quantidade de alunos em cada modalidade do projeto
+-- PERGUNTA 8: Selecionar a quantidade de alunos em cada modalidade do projeto;
+
 create view modalidade as
 select tb_atividades.projeto, count(tb_atividades.projeto) from tb_atividades
-group by tb_atividades.projeto;
+group by tb_atividades.projeto having tb_atividades.projeto is not null;
 
 select * from modalidade;
 
+-- PERGUNTA 9: Selecionar os alunos, seus pontos totais no codewars e se ele está com a nota em dia ou não;
+
+create view pontos_codewars as
+select tb_atividades.id_matricula, tb_aluno.nome, sum(codewars),    
+    case
+        when sum(codewars) >= 422 then 'Em dia com o codewars!'
+        else 'Precisa de mais pontos no codewars.'
+    end
+    from tb_atividades
+    inner join (
+        select id_matricula, count(modulo) from tb_atividades
+        group by id_matricula having count(modulo) = 5) as Alunos_que_concluiram
+        on tb_atividades.id_matricula = Alunos_que_concluiram.id_matricula
+    inner join tb_matricula on tb_matricula.id_matricula = tb_atividades.id_matricula
+    inner join tb_aluno on tb_matricula.id_aluno = tb_aluno.id_aluno
+    group by tb_aluno.nome, tb_atividades.id_matricula having sum(codewars) is not null
+    order by sum(codewars);
+
+select * from pontos_codewars;
