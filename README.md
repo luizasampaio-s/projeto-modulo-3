@@ -182,11 +182,11 @@ select * from modalidade;
 9. Selecionar os alunos, seus pontos totais no codewars e se ele está com a nota em dia ou não;
 
 ```python
-Selecionarei os atributos matricula da tabela atividades e a soma de todos os codewars da tabela aluno. Usando a cláusula CASE, caso a somatória
+Selecionamos os atributos matricula da tabela atividades e a soma de todos os codewars da tabela aluno. Usamos a cláusula CASE, caso a somatória
 da pontuação do code wars seja superior ou igual a 422 pontos, aparece a mensagem de que o aluni está 'Em dia com o codewars!'. Caso contrário,
 aparece a mensagem de que o aluno 'Precisa de mais pontos no codears.'
 
-Em seguida, na linha 197 inicia-se o script SQL das tabelas envolvidas para que a consulta seja realizada. Na linha 204 é utilizado a cláusula group by
+Em seguida, na linha 197 inicia-se o script SQL das tabelas envolvidas para que a consulta seja realizada. Na linha 203 é utilizado a cláusula group by
 
 select tb_atividades.id_matricula, tb_aluno.nome, sum(codewars),    
     case
