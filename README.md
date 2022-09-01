@@ -141,16 +141,78 @@ left join tb_alunos_empregados on tb_aluno.id_aluno = tb_alunos_empregados.id_al
 where salario is Null
 order by tb_aluno.id_aluno;
 
-Abaixo, realização da consulta que retorna o nome dos
-alunos que ainda estão sem emprego após a realização do curso. 
+Abaixo, realização da consulta que retorna o nome dos alunos que ainda estão sem emprego após a realização do curso. 
 
 select id_aluno, nome as "alunos desempregados"
 from aluno_desempregado;
 ```
 
+7. Quantos ToDo's 1 e 2 já foram enviados?
+
+```python
+Criação de viem com nome todos_enviados
+
+create view todos_enviados as
+select count(tba.todo1) as ToDos from tb_atividades tba
+where tba.todo1 = true
+union all
+select count(tba.todo2) from tb_atividades tba
+where tba.todo2 = true;
+
+Abaixo, realização da consulta que retorna todos os To Do`s que foram enviados pelos alunos
+
+select * from todos_enviados;
+```
+
+8. Selecionar a quantidade de alunos em cada modalidade do projeto;
+
+```python
+Criação de viem com nome modalidade
+
+create view modalidade as
+select tb_atividades.projeto, count(tb_atividades.projeto) from tb_atividades
+group by tb_atividades.projeto having tb_atividades.projeto is not null;
+
+
+Abaixo, realização da consulta que retorna a quantidade de alunos em cada modalidade do projeto.
+
+select * from modalidade;
+```
+
+9. Selecionar os alunos, seus pontos totais no codewars e se ele está com a nota em dia ou não;
+
+```python
+Selecionamos os atributos matricula da tabela atividades e a soma de todos os codewars da tabela aluno. Usamos a cláusula CASE.
+Se a somatória da pontuação do code wars for superior ou igual a 422 pontos, aparece a mensagem de que o aluno está 'Em dia com o codewars!'.
+Caso contrário, aparece a mensagem de que o aluno 'Precisa de mais pontos no codewars.'
+
+Em seguida, na linha 196 inicia-se o script SQL das tabelas envolvidas para que a consulta seja realizada. Na linha 203 é utilizado a cláusula group by
+
+select tb_atividades.id_matricula, tb_aluno.nome, sum(codewars),    
+    case
+        when sum(codewars) >= 422 then 'Em dia com o codewars!'
+        else 'Precisa de mais pontos no codewars.'
+    end
+    from tb_atividades
+    inner join (
+        select id_matricula, count(modulo) from tb_atividades
+        group by id_matricula having count(modulo) = 5) as Alunos_que_concluiram
+        on tb_atividades.id_matricula = Alunos_que_concluiram.id_matricula
+    inner join tb_matricula on tb_matricula.id_matricula = tb_atividades.id_matricula
+    inner join tb_aluno on tb_matricula.id_aluno = tb_aluno.id_aluno
+    group by tb_aluno.nome, tb_atividades.id_matricula having sum(codewars) is not null
+    order by sum(codewars);
+
+
+Abaixo, realização da consulta que retorna a quantidade de pontos dos alunos da Resilia.
+
+select * from pontos_codewars;
+```
+
 Para visualizar os dados das consultas foi criado um dashboard com Power BI em que é possível analisar graficamente das consultas e os insights que foram gerados pelo banco de dados:
 
-![image](https://cdn.discordapp.com/attachments/998027176605646848/1001698133849415782/Screenshot_3.png)
+![Screenshot_3](https://user-images.githubusercontent.com/75100979/187985465-c06fd341-187e-4677-ac32-e8be8eb396a0.png)
+
 
 ## 💡 COMO EXECUTAR O PROJETO?
 
